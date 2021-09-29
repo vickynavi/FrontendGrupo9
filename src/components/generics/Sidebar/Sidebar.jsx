@@ -6,6 +6,7 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
+import { Productos } from '../../modules/productos/Productos';
 
 const Sidebar = () => {
   return (
@@ -35,6 +36,7 @@ const Sidebar = () => {
 
       <Switch>
         <Route path="/productos">
+          <Productos />
 
         </Route>
         <Route path="/ventas">
