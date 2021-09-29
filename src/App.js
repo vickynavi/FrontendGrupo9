@@ -2,6 +2,7 @@ import logo from './assets/images/logo.svg';
 import './assets/css/App.css';
 import "bootstrap/dist/css/bootstrap.css";
 import MenuComponente from './components/MenuComponente';
+import Table from './components/Table/Table';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
       <div className="container-fluid">
         <div className="row">
           <MenuComponente />
+          <Table />
         </div>
       </div>
     </div>
