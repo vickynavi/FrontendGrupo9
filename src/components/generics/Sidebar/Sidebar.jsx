@@ -1,7 +1,6 @@
 import React from 'react'
 //import { Navbar, Nav } from 'react-bootstrap';
 import { Link, NavLink } from "react-router-dom";
-import Table from '../../modules/ventas/table/Table';
 import {
   BrowserRouter as Router,
   Switch,
@@ -9,9 +8,19 @@ import {
 } from "react-router-dom";
 import Header from '../../header/Header';
 import Home from '../../modules/Home';
+import Login from '../../modules/login/Login';
+//import Productos from '../../modules/productos/Productos';
 
 
-const Sidebar = () => {
+function Sidebar() {
+  const pathname = window.location.pathname;
+  if (pathname==="/login") {
+    return <Login/>
+  }
+  return <IsSidebar />;
+}
+
+const IsSidebar = () => {
   return (
     <Router>
       <div className="container-fluid">
@@ -52,13 +61,10 @@ const Sidebar = () => {
           <div className="b-example-divider"></div>
           <main className="col-md-9 ms-sm-auto col-lg-10 px-md-5">
             <Switch>
-              <Route path="/">
-                <Home />
-              </Route>
-              <Route path="/productos">
-              </Route>
+              <Route exact path="/" component={Home} />
+              <Route exact path="/productos" />
+          
               <Route path="/ventas">
-                <Table />
               </Route>
               <Route path="/usuarios">
               </Route>
