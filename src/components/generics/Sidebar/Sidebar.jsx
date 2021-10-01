@@ -7,8 +7,10 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
+import Productos from '../../modules/productos/Productos';
 import Header from '../../header/Header';
 import Home from '../../modules/Home';
+
 
 
 const Sidebar = () => {
@@ -51,12 +53,12 @@ const Sidebar = () => {
           </nav>
           <div className="b-example-divider"></div>
           <main className="col-md-9 ms-sm-auto col-lg-10 px-md-5">
-            <Switch>
-              <Route path="/">
-                <Home />
-              </Route>
-              <Route path="/productos">
-              </Route>
+
+          <Switch>
+              <Route exact path="/" component={Home} />
+              <Route exact path="/productos" component={Productos} />
+            
+
               <Route path="/ventas">
                 <Table />
               </Route>
