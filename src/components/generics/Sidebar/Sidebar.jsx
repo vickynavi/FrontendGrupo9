@@ -1,51 +1,71 @@
 import React from 'react'
-import { Navbar, Nav } from 'react-bootstrap';
+//import { Navbar, Nav } from 'react-bootstrap';
+import { Link, NavLink } from "react-router-dom";
 import Table from '../../modules/ventas/table/Table';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
 } from "react-router-dom";
-import { Productos } from '../../modules/productos/Productos';
+import Header from '../../header/Header';
+import Home from '../../modules/Home';
+
 
 const Sidebar = () => {
   return (
     <Router>
-      <Navbar bg="dark" variant="dark" className="col-md-3 col-lg-2">
-        <div className="position-sticky pt-3">
-          <ul className="nav flex-column">
-            <Navbar.Brand href="inicio">Tienda de Bicicletas</Navbar.Brand>
-            <li className="nav-item">
-              <Nav.Link href="inicio">Inicio</Nav.Link>
-            </li>
-            <h6 className="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-              <span>Servicios</span>
-            </h6>
-            <li className="nav-item">
-              <Nav.Link href="productos">Productos</Nav.Link>
-            </li>
-            <li className="nav-item">
-              <Nav.Link href="ventas">Ventas</Nav.Link>
-            </li>
-            <li className="nav-item">
-              <Nav.Link href="usuarios">Gestion de Usuarios</Nav.Link>
-            </li>
-          </ul>
+      <div className="container-fluid">
+        <div className="row">
+          <Header />
+
+          <nav id="sidebarMenu" className="col-md-3 col-lg-2 d-md-block text-white bg-dark sidebar collapse">
+            <div className=" position-sticky pt-3">
+              <ul className="nav nav-pills flex-column mb-auto">
+
+                <li className="nav-item">
+                  <NavLink className="nav-link link-light" exact to="/">
+                    <i className="bi-house-fill me-2"></i>
+                    Inicio
+                  </NavLink>
+                </li>
+                <li className="nav-item">
+                  <NavLink className="nav-link link-light" exact to="/productos">
+                    <i className="bi-grid me-2"></i>
+                    Productos
+                  </NavLink>
+                </li>
+                <li className="nav-item">
+                  <NavLink className="nav-link link-light" exact to="/ventas">
+                    <i className="bi-table me-2"></i>
+                    Ventas
+                  </NavLink>
+                </li>
+                <li className="nav-item">
+                  <NavLink className="nav-link link-light" exact to="/usuarios">
+                    <i className="bi-person-circle me-2"></i>
+                    Gestion de Usuarios
+                  </NavLink>
+                </li>
+              </ul>
+            </div>
+          </nav>
+          <div className="b-example-divider"></div>
+          <main className="col-md-9 ms-sm-auto col-lg-10 px-md-5">
+            <Switch>
+              <Route path="/">
+                <Home />
+              </Route>
+              <Route path="/productos">
+              </Route>
+              <Route path="/ventas">
+                <Table />
+              </Route>
+              <Route path="/usuarios">
+              </Route>
+            </Switch>
+          </main>
         </div>
-      </Navbar>
-
-      <Switch>
-        <Route path="/productos">
-          <Productos />
-
-        </Route>
-        <Route path="/ventas">
-          <Table />
-        </Route>
-        <Route path="/usuarios">
-
-        </Route>
-      </Switch>
+      </div>
     </Router>
   )
 }
