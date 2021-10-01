@@ -97,7 +97,7 @@ export const Productos = () => {
                                     </div>
 
                                     <div className="col-sm-8">
-                                        <label for="cantidad" className="text-light form-label">Cantidad</label>
+                                        <label for="cantidad" className="text-light form-label">Stock</label>
                                         <div className="input-group has-validation">
                                             <span className="input-group-text">Numero de unidades</span>
                                             <input type="number" className="form-control" id="cantidad"
