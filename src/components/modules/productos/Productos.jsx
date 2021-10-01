@@ -9,9 +9,10 @@ export const Productos = () => {
     }
 
     return (
-        <body className="bg-dark">
-            <div className="container">
-                <main>
+        /* <body className="bg-dark">
+            <div className="container"> */
+            <>
+                <main className="bg-dark">
                     <div className="py-5 text-center">
                         <img className="d-block-mx-auto mb-2" src={defImagen} alt="" width="20%" height="auto" />
                         <h2 className="text-light">Agrega un producto</h2>
@@ -123,7 +124,7 @@ export const Productos = () => {
                         </div>
                     </div>
                 </main>
-                <footer className="my-5 pt-5 text-muted text-center text-small">
+                <footer className="my-5 pt-5 text-muted text-center text-small bg-dark">
                     <p className="mb-1">© 2017–2021 Company Name</p>
                     <ul className="list-inline">
                         <li className="list-inline-item"><p>Privacy</p></li>
@@ -131,8 +132,9 @@ export const Productos = () => {
                         <li className="list-inline-item"><p>Support</p></li>
                     </ul>
                 </footer>
-            </div>
-        </body>
+                </>
+           /*  </div>
+        </body> */
     )
 
 }
