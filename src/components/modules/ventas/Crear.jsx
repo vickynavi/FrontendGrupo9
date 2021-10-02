@@ -3,7 +3,7 @@ import { Form, Button, Row, Col, Table } from "react-bootstrap"
 import swal from 'sweetalert'
 
 const Crear = () => {
-    
+
     const crearVentaExitosa=()=>{
         swal({
             title: "Registro de venta",
@@ -159,7 +159,7 @@ const Crear = () => {
                                 <td><Form.Control type="name" placeholder="$" /></td>
                             </tr>
                             <tr>
-                                <td colSpan="3">TOTAL FACTURA</td>
+                                <th colSpan="3">TOTAL FACTURA</th>
                                 <td><Form.Control type="name" placeholder="$" /></td>
                             </tr>
                         </tbody>

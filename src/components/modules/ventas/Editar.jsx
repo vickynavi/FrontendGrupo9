@@ -112,7 +112,7 @@ const Editar = () => {
                                 <td><Form.Control type="name" placeholder="$ 190.000" /></td>
                             </tr>
                             <tr>
-                                <td colSpan="3">TOTAL FACTURA</td>
+                                <th colSpan="3">TOTAL FACTURA</th>
                                 <td><Form.Control type="name" placeholder="$ 350.000" /></td>
                             </tr>
                         </tbody>
