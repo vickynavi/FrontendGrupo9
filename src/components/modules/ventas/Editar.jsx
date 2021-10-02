@@ -1,7 +1,24 @@
 import React from 'react'
 import { Form, Button, Row, Col, Table } from "react-bootstrap"
+import swal from 'sweetalert'
 
 const Editar = () => {
+
+    const editarVentaExitosa=()=>{
+        swal({
+            title: "Editar venta",
+            text: "¿Estas seguro que quieres editar esta venta?",
+            icon: "warning",
+            buttons: ["No", "Si"],
+        }).then(respuesta=>{
+            if(respuesta){
+                swal({text: "La venta se ha editado con exito", icon:"success"})
+            }else{
+                swal({text: "La venta no se ha podido editar", icon:"error"})
+            }
+        })
+    }
+
     return (
         <div className="contenedor">
             <hr />
@@ -101,7 +118,7 @@ const Editar = () => {
                         </tbody>
                     </Table>
                 </div>
-                <Button variant="primary" type="submit">Guardar Cambios</Button>
+                <Button onClick={()=>editarVentaExitosa()} variant="primary" type="button">Guardar Cambios</Button>
                 <hr />
             </Form>
         </div>

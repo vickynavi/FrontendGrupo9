@@ -1,7 +1,18 @@
 import React from 'react'
 import { Form, Button, Row, Col, Table } from "react-bootstrap"
+import swal from 'sweetalert'
 
 const Crear = () => {
+    
+    const crearVentaExitosa=()=>{
+        swal({
+            title: "Registro de venta",
+            text: "EXITOSA",
+            icon: "success",
+            button: "Aceptar"
+        })
+    }
+
     return (
         <div className="contenedor">
             <hr />
@@ -154,7 +165,7 @@ const Crear = () => {
                         </tbody>
                     </Table>
                 </div>
-                <Button variant="primary" type="submit">Registrar Venta</Button>
+                <Button onClick={()=>crearVentaExitosa()} variant="primary" type="button">Registrar Venta</Button>
                 <hr />
             </Form>
         </div>
