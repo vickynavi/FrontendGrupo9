@@ -1,13 +1,20 @@
 import React from 'react'
 import defImagen from './images/logo_1.png'
 
-const cargarImagen = (event) => {
-    var image = document.getElementById('output');
-    image.src = URL.createObjectURL(event.target.files[0]);
-}
 
 
-const Productos = () => {
+const editarProductos = () => {
+
+    const cargarImagen = (event) => {
+        var image = document.getElementById('output');
+        image.src = URL.createObjectURL(event.target.files[0]);
+    }
+
+    const alertEditarProducto = (e) => {
+        e.preventDefault();
+        alert("Cambios guardados con éxito")
+    }
+    
 
     return (
 
@@ -15,8 +22,8 @@ const Productos = () => {
             <main className="bg-white">
                 <div className="py-5 text-center">
                     <img className="d-block-mx-auto mb-2" src={defImagen} alt="" width="20%" height="auto" />
-                    <h2 className="text-dark">Agrega un producto</h2>
-                    <p className="text-dark lead">A continuación podrás agregar un producto al sistema. Recuerda que todos los campos son
+                    <h2 className="text-dark">Edita un producto</h2>
+                    <p className="text-dark lead">A continuación podrás editar un producto existente en el sistema. Recuerda que todos los campos son
                         obligatorios.</p>
                 </div>
 
@@ -28,7 +35,7 @@ const Productos = () => {
                                 <div className="col-sm-6">
                                     <label for="tipoPrenda" className="text-dark form-label">Tipo de prenda</label>
                                     <select className="form-select" id="tipoPrenda" required="">
-                                        <option value="">Choose...</option>
+                                        <option value="">Pantalón</option>
                                         <option>Camisa</option>
                                         <option>Camiseta</option>
                                         <option>Pantalón</option>
@@ -42,7 +49,7 @@ const Productos = () => {
                                 <div className="col-sm-6">
                                     <label for="talla" className="text-dark form-label">Talla</label>
                                     <select className="form-select" id="tipoPrenda" required="">
-                                        <option value="">Choose...</option>
+                                        <option value="">S</option>
                                         <option>XS</option>
                                         <option>S</option>
                                         <option>M</option>
@@ -55,10 +62,10 @@ const Productos = () => {
                                 </div>
 
                                 <div className="col-12">
-                                    <label for="producto" className="text-dark form-label">Nombre del producto</label>
+                                    <label for="producto" className="text-dark form-label">Camiseta</label>
                                     <div className="input-group has-validation">
                                         <span className="input-group-text">#</span>
-                                        <input type="text" className="form-control" id="producto" placeholder="Ingresa el nombre del producto"
+                                        <input type="text" className="form-control" id="producto" placeholder="Camiseta a rayas"
                                             required="" />
                                         <div className="invalid-feedback">
                                             Este producto ya existe.
@@ -70,7 +77,7 @@ const Productos = () => {
                                     <label for="manufactura" className="text-dark form-label">Manufactura <span className="text-muted">(Marca o importador del
                                         producto)</span></label>
                                     <input type="text" className="form-control" id="manufactura"
-                                        placeholder="Ingresa la manufactura del producto" />
+                                        placeholder="Gef" />
                                     <div className="invalid-feedback">
                                         Valor ingresado incorrecto.
                                     </div>
@@ -79,7 +86,7 @@ const Productos = () => {
                                 <div className="col-12">
                                     <label for="descpripcion" className="text-dark form-label">Descripción del producto</label>
                                     <input type="text" className="form-control" id="descpripcion"
-                                        placeholder="Realiza una breve descripción del producto" required="" />
+                                        placeholder="Camisa a rayas en algodón" required="" />
                                     <div className="invalid-feedback">
                                         Descripción inválida.
                                     </div>
@@ -89,7 +96,7 @@ const Productos = () => {
                                     <label for="precio" className="text-dark form-label">Precio del producto</label>
                                     <div className="input-group has-validation">
                                         <span className="input-group-text">COP</span>
-                                        <input type="number" className="form-control" id="precio" placeholder="Ingresa el precio del producto"
+                                        <input type="number" className="form-control" id="precio" placeholder="47000"
                                             required="" />
                                         <div className="invalid-feedback">
                                             Valor incorrecto.
@@ -102,7 +109,7 @@ const Productos = () => {
                                     <div className="input-group has-validation">
                                         <span className="input-group-text">Numero de unidades</span>
                                         <input type="number" className="form-control" id="cantidad"
-                                            placeholder="Ingresa el número de unidades a agregar" required="" />
+                                            placeholder="5" required="" />
                                         <div className="invalid-feedback">
                                             Valor incorrecto.
                                         </div>
@@ -118,7 +125,7 @@ const Productos = () => {
                             </div>
                             <div>
                                 <br />
-                                <button className="w-100 btn btn-primary btn-lg" type="submit">Agregar producto</button>
+                                <button onClick={alertEditarProducto} className="w-100 btn btn-primary btn-lg" type="submit">Guardar cambios</button>
                             </div>
 
                         </form>
@@ -141,4 +148,4 @@ const Productos = () => {
 
 };
 
-export default Productos;
+export default editarProductos;
