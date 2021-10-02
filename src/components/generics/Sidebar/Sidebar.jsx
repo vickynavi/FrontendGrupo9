@@ -31,18 +31,13 @@ const Sidebar = () => {
                     Inicio
                   </NavLink>
                 </li>
-                <li className="nav-item">
-                  <NavLink className="nav-link link-light" exact to="/agregar-productos">
-                    <i className="bi-grid me-2"></i>
-                    Productos
-                  </NavLink>
-                </li>
+                
 
               
                 <li className="nav-item">
                   <NavLink className="nav-link link-light" exact to="/productos/tabla">
                     <i className="bi-grid me-2"></i>
-                    Gestión productos
+                    Productos
                   </NavLink>
                 </li>
 
@@ -67,8 +62,8 @@ const Sidebar = () => {
 
           <Switch>
               <Route exact path="/" component={Home} />
-              <Route exact path="/agregar-productos" component={agregarProductos} />
-              <Route exact path="/editar-productos" component={editarProductos} />
+              <Route exact path="/productos" component={agregarProductos} />
+              <Route exact path="/productos" component={editarProductos} />
               <Route exact path="/productos/tabla" component={Tablaproductos} />
 
               <Route path="/ventas">

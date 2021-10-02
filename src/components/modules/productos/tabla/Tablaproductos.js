@@ -17,12 +17,12 @@ const Tablaproductos = () => {
 
    const submit =(e) => {
        e.preventDefault();
-       history.push('/editar-productos')
+       history.push('/productos')
    }
 
    const agregar =(e) => {
     e.preventDefault();
-    history.push('/agregar-productos')
+    history.push('/productos')
 }
 
 
