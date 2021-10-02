@@ -1,10 +1,13 @@
 import React from 'react'
+//import { Table, Button, Form, Navbar, FormControl, Container } from "react-bootstrap"
 
 
-const Table = () => {
+
+
+const Tablaproductos = () => {
     return (
         <div className = "table container">
-            <table className="table table-dark">
+            <table className="table table-hover">
             <thead>
                 <tr>
                     <th scope="col">#</th>
@@ -37,4 +40,7 @@ const Table = () => {
     )
 }
 
-export default Table
+export default Tablaproductos
+
+
+
