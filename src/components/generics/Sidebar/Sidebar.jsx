@@ -8,6 +8,7 @@ import {
   Route,
 } from "react-router-dom";
 import Productos from '../../modules/productos/Productos';
+import Tablaproductos from '../../modules/productos/tabla/Tablaproductos';
 import Header from '../../header/Header';
 import Home from '../../modules/Home';
 
@@ -37,6 +38,14 @@ const Sidebar = () => {
                   </NavLink>
                 </li>
                 <li className="nav-item">
+                  <NavLink className="nav-link link-light" exact to="/productos/tabla">
+                    <i className="bi-grid me-2"></i>
+                    Gestión productos
+                  </NavLink>
+                </li>
+
+
+                <li className="nav-item">
                   <NavLink className="nav-link link-light" exact to="/ventas">
                     <i className="bi-table me-2"></i>
                     Ventas
@@ -57,7 +66,7 @@ const Sidebar = () => {
           <Switch>
               <Route exact path="/" component={Home} />
               <Route exact path="/productos" component={Productos} />
-            
+              <Route exact path="/productos/tabla" component={Tablaproductos} />
 
               <Route path="/ventas">
                 <Table />
