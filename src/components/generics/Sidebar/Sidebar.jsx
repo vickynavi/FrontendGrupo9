@@ -62,8 +62,8 @@ const Sidebar = () => {
 
           <Switch>
               <Route exact path="/" component={Home} />
-              <Route exact path="/productos" component={agregarProductos} />
-              <Route exact path="/productos" component={editarProductos} />
+              <Route exact path="/productos/agregar-productos" component={agregarProductos} />
+              <Route exact path="/productos/editar-productos" component={editarProductos} />
               <Route exact path="/productos/tabla" component={Tablaproductos} />
 
               <Route path="/ventas">

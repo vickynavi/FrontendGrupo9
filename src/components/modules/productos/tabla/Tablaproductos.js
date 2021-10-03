@@ -17,12 +17,12 @@ const Tablaproductos = () => {
 
    const submit =(e) => {
        e.preventDefault();
-       history.push('/productos')
+       history.push('/productos/editar-productos')
    }
 
    const agregar =(e) => {
-    e.preventDefault();
-    history.push('/productos')
+        e.preventDefault();
+        history.push('/productos/agregar-productos')
 }
 
 
@@ -117,11 +117,10 @@ const Tablaproductos = () => {
                 </tr>
             </tbody>
         </table>
-      
+            {/* ESTE SWITCH NO FUNCIONA, EL QUE FUNCIONA ES EL "ORIGINAL" DESDE EL SIDEBAR.JSX */}
             <Switch>
-            
-                <Route exact path="/agregar-productos" component={agregarProductos} />
-                <Route exact path="/editar-productos" component={editarProductos} />
+                <Route exact path='/productos/agregar-productos' component={agregarProductos} />
+                <Route exact path='/productos/editar-productos' component={editarProductos} />
             </Switch>
         
         </div >
