@@ -1,6 +1,6 @@
 import React from 'react'
 //import { Navbar, Nav } from 'react-bootstrap';
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import {
   BrowserRouter as Router,
   Switch,
@@ -9,7 +9,10 @@ import {
 import Header from '../../header/Header';
 import Home from '../../modules/Home';
 import Login from '../../modules/login/Login';
-//import Productos from '../../modules/productos/Productos';
+import Tablaproductos from '../../modules/productos/tabla/Tablaproductos';
+import Usuarios from '../../modules/usuarios/Usuarios';
+import Ventas from '../../modules/ventas/Ventas';
+
 
 
 function Sidebar() {
@@ -62,12 +65,9 @@ const IsSidebar = () => {
           <main className="col-md-9 ms-sm-auto col-lg-10 px-md-5">
             <Switch>
               <Route exact path="/" component={Home} />
-              <Route exact path="/productos" />
-          
-              <Route path="/ventas">
-              </Route>
-              <Route path="/usuarios">
-              </Route>
+              <Route exact path="/productos" component={Tablaproductos}/>
+              <Route exact path="/ventas" component={Ventas}/>
+              <Route exact path="/usuarios" component={Usuarios}/>
             </Switch>
           </main>
         </div>
