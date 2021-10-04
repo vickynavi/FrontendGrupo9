@@ -1,29 +1,20 @@
 import React from 'react'
 //import { Navbar, Nav } from 'react-bootstrap';
 import { NavLink } from "react-router-dom";
+import Table from '../../modules/ventas/table/Table';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-} from 'react-router-dom';
+} from "react-router-dom";
+import agregarProductos from '../../modules/productos/agregarProductos';
 import Header from '../../header/Header';
 import Home from '../../modules/Home';
-import Login from '../../modules/login/Login';
-import Tablaproductos from '../../modules/productos';
-import Usuarios from '../../modules/usuarios/usuarios';
-import Ventas from '../../modules/ventas/Ventas';
+import editarProductos from '../../modules/productos/editarProductos';
+import Tablaproductos from '../../modules/productos/tabla/Tablaproductos';
 
 
-
-function Sidebar() {
-  const pathname = window.location.pathname;
-  if (pathname==="/login") {
-    return <Login/>
-  }
-  return <IsSidebar />;
-}
-
-const IsSidebar = () => {
+const Sidebar = () => {
   return (
     <Router>
       <div className="container-fluid">
@@ -40,12 +31,17 @@ const IsSidebar = () => {
                     Inicio
                   </NavLink>
                 </li>
+                
+
+              
                 <li className="nav-item">
-                  <NavLink className="nav-link link-light" exact to="/productos">
+                  <NavLink className="nav-link link-light" exact to="/productos/tabla">
                     <i className="bi-grid me-2"></i>
                     Productos
                   </NavLink>
                 </li>
+
+
                 <li className="nav-item">
                   <NavLink className="nav-link link-light" exact to="/ventas">
                     <i className="bi-table me-2"></i>
@@ -63,11 +59,18 @@ const IsSidebar = () => {
           </nav>
           <div className="b-example-divider"></div>
           <main className="col-md-9 ms-sm-auto col-lg-10 px-md-5">
-            <Switch>
+
+          <Switch>
               <Route exact path="/" component={Home} />
-              {/* <Route exact path="/productos" component={Tablaproductos}/> */}
-              {/* <Route exact path="/ventas" component={Ventas}/> */}
-              <Route exact path="/usuarios" component={Usuarios}/>
+              <Route exact path="/productos/agregar-productos" component={agregarProductos} />
+              <Route exact path="/productos/editar-productos" component={editarProductos} />
+              <Route exact path="/productos/tabla" component={Tablaproductos} />
+
+              <Route path="/ventas">
+                <Table />
+              </Route>
+              <Route path="/usuarios">
+              </Route>
             </Switch>
           </main>
         </div>
