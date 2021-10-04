@@ -5,12 +5,12 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-} from "react-router-dom";
+} from 'react-router-dom';
 import Header from '../../header/Header';
 import Home from '../../modules/Home';
 import Login from '../../modules/login/Login';
-import Tablaproductos from '../../modules/productos/tabla/Tablaproductos';
-import Usuarios from '../../modules/usuarios/Usuarios';
+import Tablaproductos from '../../modules/productos';
+import Usuarios from '../../modules/usuarios/usuarios';
 import Ventas from '../../modules/ventas/Ventas';
 
 
@@ -65,8 +65,8 @@ const IsSidebar = () => {
           <main className="col-md-9 ms-sm-auto col-lg-10 px-md-5">
             <Switch>
               <Route exact path="/" component={Home} />
-              <Route exact path="/productos" component={Tablaproductos}/>
-              <Route exact path="/ventas" component={Ventas}/>
+              {/* <Route exact path="/productos" component={Tablaproductos}/> */}
+              {/* <Route exact path="/ventas" component={Ventas}/> */}
               <Route exact path="/usuarios" component={Usuarios}/>
             </Switch>
           </main>
