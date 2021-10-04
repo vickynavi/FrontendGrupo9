@@ -12,6 +12,8 @@ import Header from '../../header/Header';
 import Home from '../../modules/Home';
 import editarProductos from '../../modules/productos/editarProductos';
 import Tablaproductos from '../../modules/productos/tabla/Tablaproductos';
+import Login from '../../modules/login/Login';
+import Ventas from '../../modules/ventas/Ventas'
 
 
 const Sidebar = () => {
@@ -66,10 +68,16 @@ const Sidebar = () => {
               <Route exact path="/productos/editar-productos" component={editarProductos} />
               <Route exact path="/productos/tabla" component={Tablaproductos} />
 
-              <Route path="/ventas">
+              <Route path="/ventas"/>
                 <Table />
+              
+              <Route exact path="/productos" />
+        
+              <Route path="/ventas">
+                <Ventas />
               </Route>
               <Route path="/usuarios">
+
               </Route>
             </Switch>
           </main>
@@ -80,3 +88,6 @@ const Sidebar = () => {
 }
 
 export default Sidebar
+
+
+ 
