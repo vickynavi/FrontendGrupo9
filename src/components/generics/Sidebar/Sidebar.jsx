@@ -14,7 +14,7 @@ import editarProductos from '../../modules/productos/editarProductos';
 import Tablaproductos from '../../modules/productos/tabla/Tablaproductos';
 // import Login from '../../modules/login/Login';
 import Ventas from '../../modules/ventas/Ventas';
-import Usuarios from '../../modules/usuarios/Usuarios';
+import Usuarios from '../../modules/usuarios/usuarios';
 
 
 const Sidebar = () => {
