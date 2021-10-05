@@ -20,6 +20,7 @@ const Ventas = () => {
                 <hr />
                 <Link to="/ventas/crear"><Button href="crear" variant="secondary">Crear</Button></Link>
                 <Link to="/ventas/listar"><Button href="listar" variant="secondary">Listar</Button></Link>
+                <Link to="/ventas/editar"><Button href="editar" variant="secondary">Editar</Button></Link>
                 <Switch>
                     <Route path="/ventas/crear">
                         <Crear />

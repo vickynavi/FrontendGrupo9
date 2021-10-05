@@ -1,7 +1,7 @@
 import React from 'react'
 //import { Navbar, Nav } from 'react-bootstrap';
 import { NavLink } from "react-router-dom";
-import Table from '../../modules/ventas/table/Table';
+// import Table from '../../modules/ventas/table/Table';
 import {
   BrowserRouter as Router,
   Switch,
@@ -12,8 +12,9 @@ import Header from '../../header/Header';
 import Home from '../../modules/Home';
 import editarProductos from '../../modules/productos/editarProductos';
 import Tablaproductos from '../../modules/productos/tabla/Tablaproductos';
-import Login from '../../modules/login/Login';
-import Ventas from '../../modules/ventas/Ventas'
+// import Login from '../../modules/login/Login';
+import Ventas from '../../modules/ventas/Ventas';
+import Usuarios from '../../modules/usuarios/Usuarios';
 
 
 const Sidebar = () => {
@@ -64,21 +65,12 @@ const Sidebar = () => {
 
           <Switch>
               <Route exact path="/" component={Home} />
+              <Route exact path="/productos" />
               <Route exact path="/productos/agregar-productos" component={agregarProductos} />
               <Route exact path="/productos/editar-productos" component={editarProductos} />
               <Route exact path="/productos/tabla" component={Tablaproductos} />
-
-              <Route path="/ventas"/>
-                <Table />
-              
-              <Route exact path="/productos" />
-        
-              <Route path="/ventas">
-                <Ventas />
-              </Route>
-              <Route path="/usuarios">
-
-              </Route>
+              <Route path="/ventas" component={Ventas} />
+              <Route path="/usuarios" component={Usuarios} />
             </Switch>
           </main>
         </div>
